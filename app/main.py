@@ -86,7 +86,14 @@ app.include_router(router, prefix="/api/v1")
 @app.get("/", include_in_schema=False)
 async def root():
     return {
-        "message": f"Welcome to {settings.application_name}",
-        "documentation": "/docs",
+        "product": "AI Resume Analyzer API",
+        "version": "1.0.0",
+        "status": "live",
+        "features": [
+            "ATS score analysis",
+            "Skill gap detection",
+            "AI-powered resume improvements"
+        ],
+        "docs": "/docs",
         "health": "/api/v1/health",
     }

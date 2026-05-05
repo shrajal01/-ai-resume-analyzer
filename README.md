@@ -1,9 +1,27 @@
 # 🤖 AI Resume Analyzer API
 
+⚡ Analyze resumes in seconds and improve interview chances with AI.
+
 A production-ready REST API built with **FastAPI** that accepts a PDF resume and returns a structured AI-powered analysis — including key skills, strengths, weaknesses, suggestions, and a quality score.
 
 > **Demo Mode:** Currently runs with mock AI responses — no API key required.  
 > To enable real AI analysis, see the [Switching to Live AI](#switching-to-live-ai) section below.
+
+---
+
+## 💡 Why this API?
+
+Most resumes get rejected by ATS systems before a human even sees them.
+
+This API helps:
+- Improve resume quality instantly
+- Match job descriptions
+- Increase interview chances
+
+Built for:
+- Students
+- Job seekers
+- EdTech platforms
 
 ---
 
@@ -18,6 +36,36 @@ A production-ready REST API built with **FastAPI** that accepts a PDF resume and
 | ❤️ Health Check | https://ai-resume-analyzer-8x4f.onrender.com/api/v1/health |
 
 > ⚠️ **Note:** First request may take 30-50 seconds to respond (free tier cold start). Subsequent requests will be fast.
+
+---
+
+## 🚀 Use Cases
+
+- EdTech platforms (resume evaluation feature)
+- Job portals (ATS scoring)
+- Career coaches (resume feedback automation)
+- Students (self-improvement tool)
+
+---
+
+## 📊 Sample API Response
+
+```json
+{
+  "success": true,
+  "message": "Resume analyzed successfully.",
+  "file_name": "john_doe_resume.pdf",
+  "character_count": 4821,
+  "analysis": {
+    "key_skills": ["Python", "FastAPI", "PostgreSQL", "Docker"],
+    "strengths": ["Good project experience", "Clear structure"],
+    "weaknesses": ["Missing keywords", "Weak action verbs"],
+    "suggestions": ["Add metrics", "Use stronger verbs"],
+    "score": 72,
+    "summary": "A motivated software developer with hands-on experience building modern web applications and APIs."
+  }
+}
+```
 
 ---
 
@@ -83,7 +131,6 @@ ai-resume-analyzer/
 │       └── pdf_parser.py       ← PDF text extraction (PyMuPDF)
 ├── requirements.txt
 ├── .env.example
-├── vercel.json
 └── README.md
 ```
 
@@ -147,11 +194,11 @@ curl -X POST http://localhost:8000/api/v1/resumes/analyze \
 1. Get free API key: https://aistudio.google.com/app/apikey
 2. Install package:
 ```bash
-   pip install google-genai
+pip install google-genai
 ```
 3. Add to `.env`:
 ```
-   GEMINI_API_KEY=your-key-here
+GEMINI_API_KEY=your-key-here
 ```
 4. In `config.py` — uncomment Gemini section
 5. In `resume_service.py` — comment out Demo block, uncomment Gemini block
@@ -161,11 +208,11 @@ curl -X POST http://localhost:8000/api/v1/resumes/analyze \
 1. Get API key: https://platform.openai.com/api-keys
 2. Install package:
 ```bash
-   pip install openai
+pip install openai
 ```
 3. Add to `.env`:
 ```
-   OPENAI_API_KEY=sk-your-key-here
+OPENAI_API_KEY=sk-your-key-here
 ```
 4. In `config.py` — uncomment OpenAI section
 5. In `resume_service.py` — comment out Demo block, uncomment OpenAI block
