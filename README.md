@@ -7,6 +7,20 @@ A production-ready REST API built with **FastAPI** that accepts a PDF resume and
 
 ---
 
+## 🌐 Live Demo
+
+**API Base URL:** https://ai-resume-analyzer-8x4f.onrender.com
+
+| Link | URL |
+|---|---|
+| 📖 Swagger UI | https://ai-resume-analyzer-8x4f.onrender.com/docs |
+| 📋 ReDoc | https://ai-resume-analyzer-8x4f.onrender.com/redoc |
+| ❤️ Health Check | https://ai-resume-analyzer-8x4f.onrender.com/api/v1/health |
+
+> ⚠️ **Note:** First request may take 30-50 seconds to respond (free tier cold start). Subsequent requests will be fast.
+
+---
+
 ## 📐 Architecture Overview
 
 ```
